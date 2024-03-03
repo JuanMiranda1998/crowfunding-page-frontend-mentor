@@ -6,6 +6,7 @@ import OptionCard from './OptionCard'
 import StatsComponent from './StatsComponent'
 import DonationModal from './DonationModal'
 import { BookmarkIcon } from '../Icons'
+import Header from '../Header/Header'
 
 export const OPTIONS_DATA = [
     {
@@ -61,7 +62,8 @@ const MainComponent = () => {
     }
 
     return (
-        <div className='z-20 relative'>
+        <div className='w-full h-full flex flex-col justify-center items-center z-20 relative'>
+            <Header />
             <div className='w-80 md:w-[800px] flex flex-col gap-6 -mt-20'>
                 <section className='flex flex-col justify-center items-center text-center bg-white rounded-lg border-2 border-[#f4f4f4]'>
                     <div className='rounded-full overflow-hidden w-16 h-16 -mt-8 aspect-square'>
