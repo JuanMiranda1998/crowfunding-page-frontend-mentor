@@ -29,7 +29,7 @@ const DonationModal = ({ toggleModalFunction }) => {
           <div className='flex flex-col gap-6 my-6'>
             <div className='grid grid-cols-12 grid-rows-2 items-center place-items-center px-8 py-10 rounded-lg border border-[#dddddd]'>
                 <div className='col-span-1 row-span-1 mr-8'>
-                  <input className='w-6 h-6' type="radio" name="noReward" id="noReward" />
+                  <input className='w-6 h-6' type="radio" name="donationOption" />
                 </div>
                 <div className='col-span-11 row-span-2'>
                   <h2 className='text-xl font-semibold my-2'>Pledge with no reward</h2>
