@@ -7,6 +7,7 @@ import OptionModalCard from './OptionModalCard'
 
 const DonationModal = ({ toggleModalFunction }) => {
   const [donationCompleted, setDonationCompleted] = useState(null)
+  const [activeOption, setActiveOption] = useState(null)
 
    const toggleDonation = () =>{
     setDonationCompleted(!donationCompleted)
@@ -27,15 +28,6 @@ const DonationModal = ({ toggleModalFunction }) => {
           <h1 className='text-xl md:text-2xl font-semibold my-4'>Back this project</h1>
           <p className='text-base text-darkGray font-medium mb-4'>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
           <div className='flex flex-col gap-6 my-6'>
-            <div className='grid grid-cols-12 grid-rows-2 items-center place-items-center px-8 py-10 rounded-lg border border-[#dddddd]'>
-                <div className='col-span-1 row-span-1 mr-8'>
-                  <input className='w-6 h-6' type="radio" name="donationOption" />
-                </div>
-                <div className='col-span-11 row-span-2'>
-                  <h2 className='text-xl font-semibold my-2'>Pledge with no reward</h2>
-                  <p className='text-darkGray font-medium text-base my-4'>Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.</p>
-                </div>
-            </div>
             {
               OPTIONS_DATA.map((option) => (
                 <OptionModalCard
@@ -43,7 +35,6 @@ const DonationModal = ({ toggleModalFunction }) => {
                   title={option.title}
                   minimumTake={option.minimumTake}
                   description={option.description}
-                  isAvailable={true}
                   toggleDonationFunction={toggleDonation}
                 />
               ))

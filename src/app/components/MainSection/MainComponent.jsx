@@ -11,18 +11,24 @@ import Header from '../Header/Header'
 export const OPTIONS_DATA = [
     {
         id: 1,
+        title: 'Pledge with no reward',
+        minimumTake: 0,
+        description: "Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.",
+    },
+    {
+        id: 2,
         title: 'Bamboo Stand',
         minimumTake: 25,
         description: "You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you'll be added to a special Backer member list.",
     },
     {
-        id: 2,
+        id: 3,
         title: "Black Edition Stand",
         minimumTake: 75,
         description: "You get a Black Special Edition computer stand and a personal thank you. You'll be added to our Backer member list. Shipping is included.",
     },
     {
-        id: 3,
+        id: 4,
         title: "Mahogany Special Edition",
         minimumTake: 200,
         description: "You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You'll be added to our Backer member list. Shipping is included.",
@@ -78,7 +84,7 @@ const MainComponent = () => {
                     <p className='font-medium text-lg text-darkGray mb-6'>A beautiful &amp; handcrafted monitor stand to reduce neck and eye strain.</p>
                     <div className='flex flex-row justify-between px-10 mt-6 mb-10 w-full'>
                         <button 
-                        className='py-4 px-10 rounded-full bg-moderateCyan font-medium text-white hover:bg-darkCyan transition- colors ease-in duration-200' 
+                        className='py-4 px-10 rounded-full bg-moderateCyan font-medium text-white hover:bg-darkCyan transition-colors ease-in duration-200' 
                         onClick={toggleDonationModal}>
                         Back this project
                         </button>

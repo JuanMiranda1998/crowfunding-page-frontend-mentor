@@ -1,4 +1,3 @@
-import Header from "./components/Header/Header";
 import MainComponent from "./components/MainSection/MainComponent";
 import { cx } from "./utils";
 
