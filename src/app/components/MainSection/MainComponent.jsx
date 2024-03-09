@@ -38,15 +38,15 @@ export const OPTIONS_DATA = [
 const MainComponent = () => {
     const [optionValues, setOptionValues] = useState([
         {
-            id: 1,
+            id: 2,
             amountLeft: 101,
         },
         {
-            id: 2,
+            id: 3,
             amountLeft: 64,
         },
         {
-            id: 3,
+            id: 4,
             amountLeft: 0,
         }
     ])

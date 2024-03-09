@@ -7,11 +7,11 @@ import OptionModalCard from './OptionModalCard'
 
 const DonationModal = ({ toggleModalFunction }) => {
   const [donationCompleted, setDonationCompleted] = useState(null)
-  const [activeOption, setActiveOption] = useState(null)
 
    const toggleDonation = () =>{
     setDonationCompleted(!donationCompleted)
    }
+
 
   return (
     <div className='absolute top-0 left-0 bottom-0 right-0 flex flex-col justify-center items-center z-50 bg-black/50'>
@@ -32,6 +32,7 @@ const DonationModal = ({ toggleModalFunction }) => {
               OPTIONS_DATA.map((option) => (
                 <OptionModalCard
                   key={option.id}
+                  id={option.id}
                   title={option.title}
                   minimumTake={option.minimumTake}
                   description={option.description}
