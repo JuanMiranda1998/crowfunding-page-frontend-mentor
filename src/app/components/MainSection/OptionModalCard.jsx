@@ -1,5 +1,4 @@
 import React from 'react'
-import { OPTIONS_DATA } from './MainComponent'
 
 
 
@@ -17,7 +16,7 @@ const OptionModalCard = ({
         <div className={`rounded-lg border ${active ? 'border-2 border-moderateCyan' : 'border-[#dddddd]' } `}>
                 <div className='grid grid-cols-12 grid-rows-2 items-center place-items-center px-8 py-10'>
                     <div className='col-span-1 row-span-1 mr-8'>
-                      <input className='w-6 h-6' value={id} type="radio" name="donationOption" />
+                      <input className='w-6 h-6' value={id} onChange={()=>selectOptionFunction(id)} type="radio" name="donationOption" />
                     </div>
                     <div className='col-span-11 row-span-2'>
                         <div className='flex flex-row justify-between'>
@@ -32,12 +31,12 @@ const OptionModalCard = ({
                         </div>
                     </div>
                 </div>
-                {active && minimumTake>0 &&
+                {active && 
                     <div className='w-full flex flex-col md:flex-row justify-between items-center p-6 border-t-2 border-t-[#dddddd]'>
-                        <p className=' text-darkGray font-medium'>Enter you pledge</p>
+                        {minimumTake>0 &&<p className=' text-darkGray font-medium'>Enter you pledge</p>}
                         <div className='flex flex-row'>
-                            <div className='relative'><input className='w-24 px-8 py-2 mr-4 text-base font-semibold rounded-full focus:outline-none border border-moderateCyan' type="number" autoFocus /><span className='text-darkGray font-semibold absolute top-1/2 left-4 -translate-y-3'>$</span></div>
-                            <button className='py-3 px-6 rounded-full bg-moderateCyan font-medium text-sm text-white hover:bg-darkCyan transition-colors ease-in duration-200'>Continue</button>
+                            {minimumTake>0 && <div className='relative'><input className='w-24 px-8 py-2 mr-4 text-base font-semibold rounded-full focus:outline-none border border-moderateCyan' type="number" autoFocus /><span className='text-darkGray font-semibold absolute top-1/2 left-4 -translate-y-3'>$</span></div>}
+                            <button className='py-3 px-6 rounded-full bg-moderateCyan font-medium text-sm text-white hover:bg-darkCyan transition-colors ease-in duration-200' onClick={toggleDonationFunction}>Continue</button>
                         </div>
                     </div>
                 }

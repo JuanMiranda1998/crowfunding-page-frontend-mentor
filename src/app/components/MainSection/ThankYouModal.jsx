@@ -4,7 +4,7 @@ import CheckMarkIcon from '@/public/icon-check.svg'
 
 const ThankYouModal = ({ toggleDonationFunction }) => {
   return (
-    <div className='w-64 md:w-[400px] flex flex-col justify-center items-center px-2 text-center bg-white'>
+    <div className='w-64 md:w-[450px] flex flex-col justify-center items-center py-6 px-4 rounded-md text-center bg-white'>
         <div className='mb-4'>
             <Image
                 src={CheckMarkIcon}
