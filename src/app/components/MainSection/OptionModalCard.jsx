@@ -12,6 +12,12 @@ const OptionModalCard = ({
     active
 }) => {
 
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log(e)
+        toggleDonationFunction()
+    }
+
     return (
         <div className={`rounded-lg border ${active ? 'border-2 border-moderateCyan' : 'border-[#dddddd]' } `}>
                 <div className='grid grid-cols-12 grid-rows-2 items-center place-items-center px-8 py-10'>
@@ -34,10 +40,10 @@ const OptionModalCard = ({
                 {active && 
                     <div className='w-full flex flex-col md:flex-row justify-between items-center p-6 border-t-2 border-t-[#dddddd]'>
                         {minimumTake>0 &&<p className=' text-darkGray font-medium'>Enter you pledge</p>}
-                        <div className='flex flex-row'>
+                        <form className='flex flex-row' onSubmit={handleSubmit}>
                             {minimumTake>0 && <div className='relative'><input className='w-24 px-8 py-2 mr-4 text-base font-semibold rounded-full focus:outline-none border border-moderateCyan' type="number" autoFocus /><span className='text-darkGray font-semibold absolute top-1/2 left-4 -translate-y-3'>$</span></div>}
-                            <button className='py-3 px-6 rounded-full bg-moderateCyan font-medium text-sm text-white hover:bg-darkCyan transition-colors ease-in duration-200' onClick={toggleDonationFunction}>Continue</button>
-                        </div>
+                            <button className='py-3 px-6 rounded-full bg-moderateCyan font-medium text-sm text-white hover:bg-darkCyan transition-colors ease-in duration-200' type='submit'>Continue</button>
+                        </form>
                     </div>
                 }
             </div>
