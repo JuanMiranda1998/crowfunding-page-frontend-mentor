@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 
 
@@ -11,11 +11,14 @@ const OptionModalCard = ({
     selectOptionFunction,
     active
 }) => {
+    const [donation, setDonation] = useState(null)
 
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log(e)
-        toggleDonationFunction()
+        if (donation >= minimumTake){
+            toggleDonationFunction()
+        }
     }
 
     return (
@@ -41,7 +44,7 @@ const OptionModalCard = ({
                     <div className='w-full flex flex-col md:flex-row justify-between items-center p-6 border-t-2 border-t-[#dddddd]'>
                         {minimumTake>0 &&<p className=' text-darkGray font-medium'>Enter you pledge</p>}
                         <form className='flex flex-row' onSubmit={handleSubmit}>
-                            {minimumTake>0 && <div className='relative'><input className='w-24 px-8 py-2 mr-4 text-base font-semibold rounded-full focus:outline-none border border-moderateCyan' type="number" autoFocus /><span className='text-darkGray font-semibold absolute top-1/2 left-4 -translate-y-3'>$</span></div>}
+                            {minimumTake>0 && <div className='relative'><input className='w-24 px-8 py-2 mr-4 text-base font-semibold rounded-full focus:outline-none border border-moderateCyan' onChange={(e) => setDonation(e.target.value)} type="number" autoFocus /><span className='text-darkGray font-semibold absolute top-1/2 left-4 -translate-y-3'>$</span></div>}
                             <button className='py-3 px-6 rounded-full bg-moderateCyan font-medium text-sm text-white hover:bg-darkCyan transition-colors ease-in duration-200' type='submit'>Continue</button>
                         </form>
                     </div>
