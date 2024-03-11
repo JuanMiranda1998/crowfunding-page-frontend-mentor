@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { OPTIONS_DATA } from './MainComponent'
 
 
@@ -9,18 +9,15 @@ const OptionModalCard = ({
     minimumTake, 
     description, 
     toggleDonationFunction,
+    selectOptionFunction,
+    active
 }) => {
-    const [isActive, setIsActive] = useState(false)
-
-    const handleChange = () => {
-        setIsActive(!isActive)
-    }
 
     return (
-        <div className={`rounded-lg border ${isActive ? 'border-2 border-moderateCyan' : 'border-[#dddddd]' } `}>
+        <div className={`rounded-lg border ${active ? 'border-2 border-moderateCyan' : 'border-[#dddddd]' } `}>
                 <div className='grid grid-cols-12 grid-rows-2 items-center place-items-center px-8 py-10'>
                     <div className='col-span-1 row-span-1 mr-8'>
-                      <input className='w-6 h-6' value={id} type="radio" onChange={handleChange} name="donationOption" />
+                      <input className='w-6 h-6' value={id} type="radio" name="donationOption" />
                     </div>
                     <div className='col-span-11 row-span-2'>
                         <div className='flex flex-row justify-between'>
@@ -35,7 +32,7 @@ const OptionModalCard = ({
                         </div>
                     </div>
                 </div>
-                {isActive && minimumTake>0 &&
+                {active && minimumTake>0 &&
                     <div className='w-full flex flex-col md:flex-row justify-between items-center p-6 border-t-2 border-t-[#dddddd]'>
                         <p className=' text-darkGray font-medium'>Enter you pledge</p>
                         <div className='flex flex-row'>

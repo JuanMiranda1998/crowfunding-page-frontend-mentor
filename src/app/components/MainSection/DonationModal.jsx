@@ -7,9 +7,14 @@ import OptionModalCard from './OptionModalCard'
 
 const DonationModal = ({ toggleModalFunction }) => {
   const [donationCompleted, setDonationCompleted] = useState(null)
+  const [activeOption, setActiveOption] = useState(null)
 
    const toggleDonation = () =>{
     setDonationCompleted(!donationCompleted)
+   }
+
+   const selectOption = (id) =>{
+    setActiveOption(id)
    }
 
 
@@ -37,6 +42,8 @@ const DonationModal = ({ toggleModalFunction }) => {
                   minimumTake={option.minimumTake}
                   description={option.description}
                   toggleDonationFunction={toggleDonation}
+                  selectOptionFunction={selectOption}
+                  active={activeOption === option.id}
                 />
               ))
             }
