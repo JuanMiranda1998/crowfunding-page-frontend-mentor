@@ -68,9 +68,24 @@ const MainComponent = () => {
     }
 
     const makeDonation = (id, amount) => {
+        reduceBackersDisp(id);
         const { backed, backers } = stats;
-        const formattedAmount = parseInt(amount)
-        setStats({...stats, backed: backed + formattedAmount, backers: backers + 1 })
+        const formattedAmount = parseInt(amount);
+        setStats({...stats, backed: backed + formattedAmount, backers: backers + 1 });
+    }
+
+    const reduceBackersDisp = (optionId) => {
+        const newArr = []; 
+        optionValues.forEach((value) => {
+            if (value.id === optionId){
+                const newNum = value.amountLeft - 1
+                const newValue = {id: value.id, amountLeft: newNum}
+                newArr.push(newValue)
+            } else {
+                newArr.push(value);
+            }
+        })
+        setOptionValues(newArr)
     }
 
     return (
@@ -114,10 +129,11 @@ const MainComponent = () => {
                             OPTIONS_DATA.map((option) => (
                                 <OptionCard
                                     key={option.id}
+                                    id={option.id}
                                     title={option.title}
                                     minimumTake={option.minimumTake}
                                     description={option.description}
-                                    isAvailable={true}
+                                    optionData={optionValues}
                                     toggleFunction={toggleDonationModal}
                                 />
                             ))
