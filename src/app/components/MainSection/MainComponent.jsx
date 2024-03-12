@@ -67,6 +67,12 @@ const MainComponent = () => {
         setBookmarked(!bookmarked)
     }
 
+    const makeDonation = (id, amount) => {
+        const { backed, backers } = stats;
+        const formattedAmount = parseInt(amount)
+        setStats({...stats, backed: backed + formattedAmount, backers: backers + 1 })
+    }
+
     return (
         <div className='w-full h-full flex flex-col justify-center items-center z-20 relative'>
             <Header />
@@ -119,7 +125,7 @@ const MainComponent = () => {
                     </div>
                 </section>
             </div>
-            {donationModalOpen && <DonationModal toggleModalFunction={toggleDonationModal} />}
+            {donationModalOpen && <DonationModal toggleModalFunction={toggleDonationModal} donationFunction={makeDonation} />}
         </div>
     )
 }

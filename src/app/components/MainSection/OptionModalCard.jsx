@@ -9,14 +9,16 @@ const OptionModalCard = ({
     description, 
     toggleDonationFunction,
     selectOptionFunction,
+    makeDonationFunction,
     active
 }) => {
     const [donation, setDonation] = useState(null)
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(e)
+        console.log(e.target[0].value)
         if (donation >= minimumTake){
+            makeDonationFunction(id, e.target[0].value)
             toggleDonationFunction()
         }
     }

@@ -5,7 +5,7 @@ import CloseModalIcon from '@/public/icon-close-modal.svg'
 import ThankYouModal from './ThankYouModal'
 import OptionModalCard from './OptionModalCard'
 
-const DonationModal = ({ toggleModalFunction }) => {
+const DonationModal = ({ toggleModalFunction, donationFunction }) => {
   const [donationCompleted, setDonationCompleted] = useState(null)
   const [activeOption, setActiveOption] = useState(null)
 
@@ -43,6 +43,7 @@ const DonationModal = ({ toggleModalFunction }) => {
                   description={option.description}
                   toggleDonationFunction={toggleDonation}
                   selectOptionFunction={selectOption}
+                  makeDonationFunction={donationFunction}
                   active={activeOption === option.id}
                 />
               ))
