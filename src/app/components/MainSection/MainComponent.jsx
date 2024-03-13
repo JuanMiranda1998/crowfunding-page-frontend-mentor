@@ -141,7 +141,14 @@ const MainComponent = () => {
                     </div>
                 </section>
             </div>
-            {donationModalOpen && <DonationModal toggleModalFunction={toggleDonationModal} donationFunction={makeDonation} />}
+            {donationModalOpen && 
+            <DonationModal 
+            bookmarkFunction={toggleBookmarked}
+            bookmarkState={bookmarked}
+            toggleModalFunction={toggleDonationModal} 
+            donationFunction={makeDonation} 
+            optionData={optionValues}
+            />}
         </div>
     )
 }
