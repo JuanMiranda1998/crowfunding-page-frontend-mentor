@@ -93,12 +93,12 @@ const MainComponent = () => {
     }
 
     return (
-        <div className='w-full h-full flex flex-col justify-center items-center relative'>
+        <div className='w-full h-full flex flex-col justify-center items-center relative pb-10'>
             <Header
                 menuOpen={menuOpen}
                 toggleMenuFunction={toggleMenu}
             />
-            <div className={`w-80 md:w-[800px] flex flex-col gap-6 px-4 md:px-0 -mt-20 ${menuOpen ? 'z-0' : 'z-10' } md:z-10`}>
+            <div className={`w-[340px] md:w-[800px] flex flex-col gap-6 px-4 md:px-0 -mt-20 ${menuOpen ? 'z-0' : 'z-10' } md:z-10`}>
                 <section className='flex flex-col justify-center items-center text-center bg-white rounded-lg border-2 border-[#f4f4f4]'>
                     <div className='rounded-full overflow-hidden w-16 h-16 -mt-8 aspect-square'>
                         <Image
@@ -112,13 +112,13 @@ const MainComponent = () => {
                     <p className='font-medium text-sm md:text-lg text-darkGray mb-6 px-6 md:px-0'>A beautiful &amp; handcrafted monitor stand to reduce neck and eye strain.</p>
                     <div className='flex flex-row justify-center gap-4 md:justify-between items-center px-4 md:px-10 mt-6 mb-10 w-full'>
                         <button 
-                        className='py-4 px-4 md:px-10 rounded-full bg-moderateCyan font-medium text-white hover:bg-darkCyan transition-colors ease-in duration-200' 
+                        className='py-4 px-10 rounded-full bg-moderateCyan text-sm md:text-base font-medium text-white hover:bg-darkCyan transition-colors ease-in duration-200' 
                         onClick={toggleDonationModal}>
                         Back this project
                         </button>
-                        <div className={`${bookmarked ? 'text-darkCyan' : 'text-darkGray'} h-14 w-14 md:w-40 md:pl-4 rounded-full md:rounded-r-full md:bg-[#f4f8f9] font-semibold relative cursor-pointer hover:opacity-70 transition-opacity ease-in duration-200 flex items-center justify-center`} onClick={toggleBookmarked}>
+                        <div className={`${bookmarked ? 'text-darkCyan' : 'text-darkGray'} w-14 h-14 md:w-40 md:pl-4 rounded-full md:rounded-r-full md:bg-[#f4f8f9] font-semibold relative cursor-pointer hover:opacity-70 transition-opacity ease-in duration-200 flex items-center justify-center`} onClick={toggleBookmarked}>
                             <BookmarkIcon
-                                className='w-full h-full absolute transform md:-left-6 top-0'
+                                className='w-full h-full absolute transform left-0 md:-left-6 top-0'
                                 colorCircle={bookmarked ? '#147b74' : "#2F2F2F"}
                                 colorPath={bookmarked ? '#FFFFFF' : "#B1B1B1"}
                             />

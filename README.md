@@ -23,6 +23,18 @@ Users should be able to:
 - See the number of total backers increment by one after confirming a pledge
 - Toggle whether or not the product is bookmarked
 
+### Screenshot
+
+![Desktop](./capture/capture-desktop.png)
+![Desktop Modal](./capture/capture-desktop-modal.png)
+![Mobile](./capture/capture-mobile.png)
+![Mobile Modal](./capture/capture-mobile-modal.png)
+
+
+### Links
+
+- Solution URL: [Github](https://github.com/JuanMiranda1998/crowfunding-page-frontend-mentor)
+- Live Site URL: [Vercel]()
 
 ### Built with
 

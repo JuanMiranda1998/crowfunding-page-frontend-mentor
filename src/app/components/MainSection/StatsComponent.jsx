@@ -18,7 +18,7 @@ const StatsComponent = ({ stats }) => {
                     <p className='text-base font-medium text-darkGray mt-2'>total backers</p>
                 </div>
                 <div className='w-24 h-[2px] md:h-auto md:w-[2px] md:mx-2 bg-[#dddddd]' />
-                <div className='flex flex-col items-start'>
+                <div className='flex flex-col items-center md:items-start'>
                     <p className='text-4xl font-semibold text-black'>{formattedDays}</p>
                     <p className='text-base font-medium text-darkGray mt-2'>days left</p>
                 </div>
