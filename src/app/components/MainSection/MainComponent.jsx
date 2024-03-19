@@ -98,7 +98,7 @@ const MainComponent = () => {
                 menuOpen={menuOpen}
                 toggleMenuFunction={toggleMenu}
             />
-            <div className={`w-80 md:w-[800px] flex flex-col gap-6 px-4 md:px-0 -mt-20 ${menuOpen ? 'z-0' : 'z-10' }`}>
+            <div className={`w-80 md:w-[800px] flex flex-col gap-6 px-4 md:px-0 -mt-20 ${menuOpen ? 'z-0' : 'z-10' } md:z-10`}>
                 <section className='flex flex-col justify-center items-center text-center bg-white rounded-lg border-2 border-[#f4f4f4]'>
                     <div className='rounded-full overflow-hidden w-16 h-16 -mt-8 aspect-square'>
                         <Image

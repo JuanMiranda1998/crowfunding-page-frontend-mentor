@@ -21,7 +21,7 @@ const DonationModal = ({ bookmarkState, bookmarkFunction, toggleModalFunction, d
   return (
     <div className='absolute top-0 left-0 bottom-0 right-0 flex flex-col md:justify-center items-center z-50 bg-black/50'>
         {donationCompleted ? <ThankYouModal toggleDonationFunction={toggleDonation} /> : 
-        (<div className='w-80 md:w-[720px] flex flex-col mt-32 md:mt-0 py-8 px-10 bg-white rounded-lg shadow-md relative'>
+        (<div className='w-80 md:w-[720px] flex flex-col mt-32 md:mt-0 py-8 px-6 md:px-10 bg-white rounded-lg shadow-md relative'>
           <div className='absolute right-6 top-8 flex items-center justify-center w-8 h-8 cursor-pointer' onClick={toggleModalFunction}>
             <Image
               src={CloseModalIcon}
@@ -31,7 +31,7 @@ const DonationModal = ({ bookmarkState, bookmarkFunction, toggleModalFunction, d
             />
           </div>
           <h1 className='text-xl md:text-2xl font-semibold my-4'>Back this project</h1>
-          <p className='text-base text-darkGray font-medium mb-4'>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
+          <p className='text-sm md:text-base text-darkGray font-medium mb-2 md:mb-4'>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
           <div className='flex flex-col gap-6 my-6'>
             {
               OPTIONS_DATA.map((option) => (
