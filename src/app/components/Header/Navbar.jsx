@@ -7,16 +7,12 @@ import IconOpenMenu from '@/public/icon-hamburger.svg'
 import Link from 'next/link'
 import MenuOverlay from './MenuOverlay'
 
-const Navbar = () => {
-    const [menuOpen, setMenuOpen] = useState(false)
-
-    const handleClick = () => {
-        setMenuOpen(!menuOpen)
-    }
-
+const Navbar = ({ menuOpen, toggleMenuFunction }) => {
+    
     const links = ['About', 'Discover', 'Get Started']
+    
     return (
-        <div className='flex flex-row justify-between items-start my-14 w-full z-0'>
+        <div className='flex flex-row justify-between items-start my-14 w-full overflow-hidden z-20'>
             <div>
                 <Image
                     src={Logo}
@@ -25,7 +21,7 @@ const Navbar = () => {
                     height={Logo.height}
                 />
             </div>
-            <div className='hidden md:flex flex-row justify-between gap-8 text-white z-0'>
+            <div className='hidden md:flex flex-row justify-between gap-8 text-white'>
                 {links.map((link,index) => (
                     <Link href='/' key={index}>
                         <h1 className='capitalize'>
@@ -34,8 +30,8 @@ const Navbar = () => {
                     </Link>
                 ))}
             </div>
-            <div className='flex justify-center items-center md:hidden'>
-                <button onClick={handleClick}>
+            <div className='flex justify-center items-center md:hidden z-0'>
+                <button onClick={toggleMenuFunction}>
                     <Image 
                         src={menuOpen ? IconCloseMenu : IconOpenMenu}
                         alt=''
