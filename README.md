@@ -34,7 +34,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github](https://github.com/JuanMiranda1998/crowfunding-page-frontend-mentor)
-- Live Site URL: [Vercel](https://crowfunding-page-frontend-mentor.vercel.app/)
+- Live Site URL: [Vercel](https://crowfunding-page-frontend-mentor-frht8y0j6.vercel.app/)
 
 ### Built with
 
