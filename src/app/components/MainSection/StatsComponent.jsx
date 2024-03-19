@@ -1,7 +1,14 @@
-import React from 'react'
+'use client'
+import React, { useEffect, useState } from 'react'
 
 const StatsComponent = ({ stats }) => {
-    const statsBar = Math.floor(100 - 1000000 / stats.backed);
+    const [statsBar, setStatsBar] = useState(0)
+
+    useEffect( () => {
+        setStatsBar(Math.floor((stats.backed * 100) / 100000))
+    }, [stats, statsBar])
+
+
     const formattedBacked = stats.backed.toLocaleString();
     const formattedBackers = stats.backers.toLocaleString();
     const formattedDays = stats.daysLeft.toLocaleString();
